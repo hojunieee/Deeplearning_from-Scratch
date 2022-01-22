@@ -20,13 +20,13 @@ for i in range(iters_num):
 	x_batch = x_train[batch_mask]
 	t_batch = t_train[batch_mask]
 	
-#기울기 계산
-grad = network.Numerical_gradient(x_batch,t_batch)
+	#기울기 계산
+	grad = network.Numerical_gradient(x_batch,t_batch)
 
-#매개변수 갱신
-for key in ('W1', 'b1', 'W2', 'b2'):
-	network.params[keys] = network.params[keys] - learning_rate*grad[key]
+	#매개변수 갱신
+	for key in ('W1', 'b1', 'W2', 'b2'):
+		network.params[keys] = network.params[keys] - learning_rate*grad[key]
 
-#학습경과 기록
-loss = network.loss(x_batch,t_batch)
-train_loss_list.append(loss)
+	#학습경과 기록
+	loss = network.loss(x_batch,t_batch)
+	train_loss_list.append(loss)
