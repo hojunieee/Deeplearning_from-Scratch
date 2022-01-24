@@ -44,14 +44,20 @@ class AddLAyer:
   mul_tax_layer = MulLayer()
   
   #forward propagation
-  apple_price = mul_apple_layer.forward(apple, apple_num)
-  orange_price = mul_orange_layer.forward(orange, orange_num)
-  all_price = add_apple_orange_layer.forward(apple_price,orange_price)
-  price = mul_tax_layer.forward(all_price,tax)
+  apple_price = mul_apple_layer.forward(apple, apple_num) #1
+  orange_price = mul_orange_layer.forward(orange, orange_num) #2
+  all_price = add_apple_orange_layer.forward(apple_price,orange_price) #3
+  price = mul_tax_layer.forward(all_price,tax) #4
   
   #backward propagation
   dPrice = 1
-  dall_price, dtax_layer.backward(dprice)
+  dall_price, dtax = mul_taxlayer.backward(dprice) #4
+  dapple_price, dorange_price = add_apple_orange_layer.backward(dall_price) #3
+  dorange, dorange_num = mul_orange_layer.backward(dorange_price) #2
+  dapple, dapple_num = mul_apple_layer.backward(dapple_price) #1
+  
+  print(price)
+  print(dapple_num, dorange_num, dapple, dorange, dtax)
 
   
   
