@@ -1,4 +1,4 @@
-#다음 링크에서 가져 온 코드이며, 저의 이해르 돕기 위해 커맨트를 추가하였습니다.
+#다음 링크에서 가져 온 코드이며, 저의 개인적인 이해를 돕기 위해 커맨트를 추가하였습니다.
 # https://github.com/youbeebee/deeplearning_from_scratch/blob/master/ch5.오차역전파법/5.7.%20오차역전파법%20구현하기.py
 
 import sys
